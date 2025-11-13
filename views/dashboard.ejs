@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Cloud Computing Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+        }
+
+        .navbar-user {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar-user span {
+            font-size: 16px;
+        }
+
+        .logout-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .logout-button:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .welcome-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .welcome-card h2 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .welcome-card p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .info-box {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .info-box h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .info-box p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .info-box ul {
+            list-style-position: inside;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .info-box li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <h1>Cloud Computing Project</h1>
+            <div class="navbar-user">
+                <span>Welcome, <strong><%= username %></strong></span>
+                <form method="POST" action="/logout" style="display: inline;">
+                    <button type="submit" class="logout-button">Logout</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="welcome-card">
+            <h2>Welcome to Your Dashboard!</h2>
+            <p>You have successfully logged in. This is a protected page.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Next Steps</h3>
+            <p>This is where you can add your CRUD functionality:</p>
+            <ul>
+                <li>Create - Add new data objects/documents</li>
+                <li>Read - Search and view data with various query conditions</li>
+                <li>Update - Modify existing data objects/documents</li>
+                <li>Delete - Remove data objects/documents</li>
+            </ul>
+            <p style="margin-top: 15px;">You can also implement RESTful APIs for CRUD operations.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Authentication Status</h3>
+            <p>✓ You are currently authenticated</p>
+            <p>✓ Your session is active</p>
+            <p>✓ You can access protected routes</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
