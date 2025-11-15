@@ -1,4 +1,7 @@
 const express = require('express');
+const fsPromises = require('node:fs/promises');
+const formidable = require('express-formidable'); 
+const { MongoClient, ServerApiVersion } = require("mongodb");
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
@@ -6,11 +9,15 @@ const path = require('path');
 const User = require('./models/User');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+app.set('view engine', 'ejs');
+app.use(formidable());
 
 // MongoDB connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/comp3810sef_db';
-mongoose.connect(MONGODB_URI)
+const mongouri = 'mongodb+srv://s1411330:Ac330609@cluster0.44sr8ws.mongodb.net/?appName=Cluster0';
+const dbName = 'assignment';
+const collectionName = 'Menu';
+const client = new MongoClient(mongouri);
+mongoose.connect(mongouri)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
@@ -24,7 +31,6 @@ app.use(cookieSession({
 }));
 
 // Set EJS as view engine
-app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Serve static files
@@ -154,6 +160,7 @@ app.get('/dashboard', requireAuth, (req, res) => {
 });
 
 // Start server
+const PORT = process.env.PORT || 8099;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
