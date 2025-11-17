@@ -1,6 +1,5 @@
 const express = require('express');
 const fsPromises = require('node:fs/promises');
-const formidable = require('express-formidable'); 
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
@@ -10,14 +9,13 @@ const User = require('./models/User');
 
 const app = express();
 app.set('view engine', 'ejs');
-app.use(formidable());
 
 // MongoDB connection
 const mongouri = 'mongodb+srv://s1411330:Ac330609@cluster0.44sr8ws.mongodb.net/?appName=Cluster0';
 const dbName = 'assignment';
 const collectionName = 'Menu';
 const client = new MongoClient(mongouri);
-mongoose.connect(mongouri)
+mongoose.connect(mongouri, { dbName })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
