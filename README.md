@@ -150,7 +150,7 @@ Password: 000000
 5. **DELETE** `/api/menus/id` - Delete a data object
    - Example: `DELETE https://cloud-demo-rudt.onrender.com/api/menus/6920618dfc6605ff924cce30`
 
-**CURL Testing Commands (to be used after implementation):**
+**CURL Testing Commands**
 
 ```bash
 # GET - Read all menu item
@@ -200,6 +200,7 @@ the id must be change to the item id you want to delete
    ```
 3. **Access the Application:**
    Open your browser and navigate to `http://localhost:3000`
+
 
 
 
