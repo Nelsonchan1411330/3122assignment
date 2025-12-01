@@ -8,10 +8,10 @@
 - Group Number: Group15
 - Members:
   - Chan Hon Fung - 14113306
-  - [Student Name 2] - 13899626
+  - Law Yiu To - 13899626
   - Wong Tsz Hang - 13896600
-  - [Student Name 4] - 13896568 
-  - [Student Name 5] - 13896765
+  - Kwok Yik Hong Henry - 13896568 
+  - Li Ze Ming - 13896765
 
 ## Project File Introduction
 
@@ -200,6 +200,7 @@ the id must be change to the item id you want to delete
    ```
 3. **Access the Application:**
    Open your browser and navigate to `http://localhost:3000`
+
 
 
 
